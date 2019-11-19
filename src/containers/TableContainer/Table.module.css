@@ -1,6 +1,6 @@
 .Table {
   text-align: center;
-  margin: 36px auto;
+  margin: 66px auto;
   width: 90%;
   overflow: hidden;
 }
@@ -40,8 +40,8 @@
 } */
 
 @media only screen and (max-width: 600px) {
-  .Table {
-    margin: auto;
+  .Table table {
+    margin: 56px auto;
   }
   .Table table,
   .Table thead,
@@ -103,7 +103,11 @@
   }
   .SearchBar {
     display: block;
+    position: fixed;
+    width: 90%;
     margin: 10px auto;
+    background-color: #e0e0e0;
+    z-index: 100;
   }
   .SearchBar input {
     padding: 10px;
