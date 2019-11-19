@@ -1,5 +1,13 @@
 .Input {
   width: 90%;
-  padding: 12px 5px;
-  margin: 12px auto;
+  border: none;
+  background-color: #85adff;
+}
+.Input:focus {
+  width: 90%;
+  outline: none;
+  border-bottom: 1px solid grey;
+  margin-top: 2px;
+  padding: 3px 0;
+  background-color: #e0e0e0;
 }

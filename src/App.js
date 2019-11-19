@@ -21,7 +21,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header" />
+        <header className="App-header">
+          Search for User By Dedicated Field
+        </header>
         <Table users={this.state.users} />
       </div>
     );

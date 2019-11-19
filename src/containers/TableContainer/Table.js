@@ -42,7 +42,11 @@ export class Table extends Component {
   render() {
     return (
       <div className={styled.Table}>
-        {" "}
+        <div className={styled.SearchBar}>
+          {" "}
+          <SearchBar handleSearch={e => this.handleSearch(e, "name")} />
+        </div>
+
         <table>
           <TableHeader handleSearch={this.handleSearch} />
           <TableBody users={this.state.filteredUsers} />

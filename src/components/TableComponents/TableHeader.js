@@ -7,8 +7,8 @@ const TableHeader = props => {
     <thead>
       {["Name", "Username", "Email", "Website"].map(h => (
         <th>
-          <SearchBar handleSearch={e => props.handleSearch(e, h)} />
           {h}
+          <SearchBar handleSearch={e => props.handleSearch(e, h)} />
         </th>
       ))}
     </thead>
