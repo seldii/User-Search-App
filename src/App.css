@@ -22,5 +22,5 @@
   font-size: calc(10px + 2vmin);
   font-weight: bold;
   color: grey;
-  z-index: 100;
+  z-index: 999;
 }

@@ -4,6 +4,7 @@ import TableHeader from "../../components/TableComponents/TableHeader";
 import TableBody from "../../components/TableComponents/TableBody";
 import styled from "./Table.module.css";
 import SearchBar from "../../components/TableComponents/SearchBar/SearchBar";
+import NotFound from "../../components/UI/NotFound";
 
 export class Table extends Component {
   state = {
@@ -59,14 +60,9 @@ export class Table extends Component {
         </div>
         <table>
           <TableHeader />
-          <TableBody
-            notFound={this.state.notFound}
-            users={this.state.filteredUsers}
-          />
+          <TableBody users={this.state.filteredUsers} />
         </table>{" "}
-        {this.state.notFound ? (
-          <p>There is no user found matching your query!</p>
-        ) : null}
+        {this.state.notFound ? <NotFound /> : null}
       </div>
     );
   }
