@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import TableRow from "./TableRow";
 
 const TableBody = props => {
@@ -11,7 +10,5 @@ const TableBody = props => {
     </tbody>
   );
 };
-
-TableBody.propTypes = {};
 
 export default TableBody;

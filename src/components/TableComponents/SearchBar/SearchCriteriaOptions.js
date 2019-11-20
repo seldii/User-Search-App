@@ -9,7 +9,8 @@ const searchOptions = {
   },
   Name: {
     value: "name",
-    displayValue: "Name"
+    displayValue: "Name",
+    selected: true
   },
   Username: {
     value: "username",
@@ -26,9 +27,6 @@ const searchOptions = {
 };
 
 const SearchCriteriaOptions = props => {
-  const onOptionSelect = e => {
-    console.log(e.target.value);
-  };
   return (
     <select onChange={props.onOptionSelectHandler}>
       {Object.keys(searchOptions).map(key => (
@@ -36,7 +34,7 @@ const SearchCriteriaOptions = props => {
           key={searchOptions[key].value}
           value={searchOptions[key].value}
           disabled={searchOptions[key].disabled}
-          hidden={searchOptions[key].hidden}
+          defaultValue="name"
         >
           {searchOptions[key].displayValue}
         </option>

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import TableCell from "./TableCell";
 
 const TableRow = props => {
@@ -7,12 +6,10 @@ const TableRow = props => {
   return (
     <tr>
       {[name, username, email, website].map(value => (
-        <TableCell value={value} />
+        <TableCell key={Math.random()} value={value} />
       ))}
     </tr>
   );
 };
-
-TableRow.propTypes = {};
 
 export default TableRow;

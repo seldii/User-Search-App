@@ -1,19 +1,23 @@
 .Table {
   text-align: center;
-  margin: 15px auto;
+  margin: 66px auto;
   width: 90%;
+  overflow: hidden;
 }
 .Table table {
-  text-align: center;
   width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
 }
-.Table thead {
-  background-color: aquamarine;
+.Table thead tr {
+  background-color: salmon;
 }
 
 .Table th {
   text-align: left;
   padding: 16px 5px;
+  color: white;
+  border: 5px solid rgba(0, 0, 0, 0.25);
 }
 
 .Table tr {
@@ -22,14 +26,84 @@
 
 .Table td {
   text-align: left;
-  padding: 5px;
+  padding: 12px 5px;
+  border: 5px solid rgba(0, 0, 0, 0.25);
 }
 
-/* .Table tr:nth-child(even) {
-  background-color: #f2f2f2;
-} */
+@media only screen and (max-width: 600px) {
+  .Table table {
+    margin: 56px auto;
+  }
+  .Table table,
+  .Table thead,
+  .Table tbody,
+  .Table tr,
+  .Table th,
+  .Table td {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .Table thead,
+  .Table th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
 
-.SearchBars {
-  display: flex;
-  flex-direction: row;
+  .Table tr {
+    border: 1px solid salmon;
+  }
+
+  .Table td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 37%;
+  }
+
+  .Table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+
+    left: 6px;
+    width: 60%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+	Label the data
+	*/
+  .Table td:nth-of-type(1):before {
+    content: "Name:";
+    font-weight: bold;
+  }
+  .Table td:nth-of-type(2):before {
+    content: "Username:";
+    font-weight: bold;
+  }
+  .Table td:nth-of-type(3):before {
+    content: "Email:";
+    font-weight: bold;
+  }
+  .Table td:nth-of-type(4):before {
+    content: "Website:";
+    font-weight: bold;
+  }
+  .SearchBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 10px auto;
+    background-color: #fda37e;
+    z-index: 100;
+  }
 }

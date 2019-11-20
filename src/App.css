@@ -1,17 +1,26 @@
 .App {
   text-align: center;
-  background-color: rgb(37, 37, 88);
-  height: 100vh;
+  background-color: #fda37e;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100vw;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
 .App-header {
-  background-color: #282c34;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgb(150, 120, 120));
   height: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: bold;
+  color: grey;
+  z-index: 100;
 }
