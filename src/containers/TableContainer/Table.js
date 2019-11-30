@@ -6,6 +6,8 @@ import styled from "./Table.module.css";
 import SearchBar from "../../components/TableComponents/SearchBar/SearchBar";
 import NotFound from "../../components/UI/NotFound";
 
+const headers = ["Name", "Username", "Email", "Website"];
+
 export class Table extends Component {
   state = {
     query: "",
@@ -27,7 +29,6 @@ export class Table extends Component {
   };
 
   handleSearch = (e, option) => {
-    const users = [...this.state.users];
     //if there is no search criteria selected by user
     let searchOption = "name";
     // if search crieteria selected
@@ -36,16 +37,14 @@ export class Table extends Component {
     }
     //turn the user query in lowercase
     let query = e.target.value.toLowerCase();
-    this.setState({ query });
-    if (this.state.query) {
-      this.setState(() => {
-        const filteredUsers = users.filter(user =>
-          user[searchOption].toLowerCase().includes(query)
-        );
 
-        return { filteredUsers, notFound: filteredUsers.length === 0 };
-      });
-    }
+    this.setState(prevState => {
+      const filteredUsers = prevState.users.filter(user =>
+        user[searchOption].toLowerCase().includes(query)
+      );
+
+      return { filteredUsers, notFound: filteredUsers.length === 0, query };
+    });
   };
 
   render() {
@@ -59,7 +58,7 @@ export class Table extends Component {
           />
         </div>
         <table>
-          <TableHeader />
+          <TableHeader headers={headers} />
           <TableBody users={this.state.filteredUsers} />
         </table>{" "}
         {this.state.notFound ? <NotFound /> : null}

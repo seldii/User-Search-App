@@ -4,8 +4,8 @@ const TableHeader = props => {
   return (
     <thead>
       <tr>
-        {["Name", "Username", "Email", "Website"].map(h => (
-          <th key={Math.random()}>{h}</th>
+        {props.headers.map(h => (
+          <th key={h}>{h}</th>
         ))}
       </tr>
     </thead>
